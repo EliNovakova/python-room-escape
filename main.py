@@ -99,12 +99,12 @@ class Inventory:
     def __init__(self):
         """Inital method that constructs an inventory"""
         self.batch = pyglet.graphics.Batch()    # assigned batch to group items within inventory
-        self.image = pyglet.image.load("key.png")   # loads PNG file
+        self.image = pyglet.image.load("images/key.png")   # loads PNG file
         self.keys = []  # list that contains keys sprites that user clicked on
         self.base_x = 1160   # x position of the first key
         self.base_y = 633    # y position of the first key
         self.show = False   # set True to show
-        self.background = pyglet.sprite.Sprite(pyglet.image.load("background_inventory.png"), x=1112, y=0)  # background sprite
+        self.background = pyglet.sprite.Sprite(pyglet.image.load("images/background_inventory.png"), x=1112, y=0)  # background sprite
 
     def draw(self):
         """Draws inventory (its background and its content), only when self.show is set to True"""
@@ -134,12 +134,12 @@ class Inventory:
 """Start screen:"""
 batch_screen_start = pyglet.graphics.Batch()
 
-image = pyglet.image.load('screen_start.png')
+image = pyglet.image.load('images/screen_start.png')
 background = pyglet.sprite.Sprite(image)
 background.scale = 1
 
-button_howto = ClickableItem("button_howto", "button_howto.png", 280, 350, batch_screen_start, 0.5)     # creates clickable objects
-button_start = ClickableItem("button_start", "button_start.png", 720, 350, batch_screen_start, 0.5)
+button_howto = ClickableItem("button_howto", "images/button_howto.png", 280, 350, batch_screen_start, 0.5)     # creates clickable objects
+button_start = ClickableItem("button_start", "images/button_start.png", 720, 350, batch_screen_start, 0.5)
 
 sprites_screen_start = [button_howto, button_start]
 
@@ -149,11 +149,11 @@ active_scene = screen_start     # start screen is set as active scene, first sce
 """How to play screen:"""
 batch_screen_howto = pyglet.graphics.Batch()
 
-image = pyglet.image.load('screen_howto.png')
+image = pyglet.image.load('images/screen_howto.png')
 background = pyglet.sprite.Sprite(image)
 background.scale = 1
 
-button_arrow = ClickableItem("button_arrow", "button_arrow.png", 55, 610, batch_screen_howto, 0.5)  # loads clickable button
+button_arrow = ClickableItem("button_arrow", "images/button_arrow.png", 55, 610, batch_screen_howto, 0.5)  # loads clickable button
 
 sprites_screen_howto = [button_arrow]
 screen_howto = Scene("screen_howto", background, sprites_screen_howto, batch_screen_howto)
@@ -161,7 +161,7 @@ screen_howto = Scene("screen_howto", background, sprites_screen_howto, batch_scr
 """End screen:"""
 batch_screen_end = pyglet.graphics.Batch()
 
-image = pyglet.image.load('screen_end.png')
+image = pyglet.image.load('images/screen_end.png')
 background = pyglet.sprite.Sprite(image)
 background.scale = 1
 
@@ -171,14 +171,14 @@ screen_end = Scene("screen_end", background, sprites_screen_end, batch_screen_en
 """Main scene1:"""
 batch_main1 = pyglet.graphics.Batch()
 
-image = pyglet.image.load('background.png')
+image = pyglet.image.load('images/background.png')
 background = pyglet.sprite.Sprite(image)
 background.scale = 0.5
 
-bed_whole = ClickableItem("bed_whole", "bed_whole.png", 731, 0, batch_main1, 0.5)
-bookcase = ClickableItem("bookcase", "bookcase.png", 225, 110, batch_main1, 0.5)
-bedside_table = ClickableItem("bedside_table", "bedside_table.png", 520, 110, batch_main1, 0.5)
-painting = ClickableItem("painting", "painting.png", 780, 400, batch_main1, 0.5)
+bed_whole = ClickableItem("bed_whole", "images/bed_whole.png", 731, 0, batch_main1, 0.5)
+bookcase = ClickableItem("bookcase", "images/bookcase.png", 225, 110, batch_main1, 0.5)
+bedside_table = ClickableItem("bedside_table", "images/bedside_table.png", 520, 110, batch_main1, 0.5)
+painting = ClickableItem("painting", "images/painting.png", 780, 400, batch_main1, 0.5)
 
 
 sprites_main1 = [bed_whole, bookcase, bedside_table, painting]
@@ -189,15 +189,15 @@ inventory = Inventory()     # inventory is created
 """Main scene2:"""
 batch_main2 = pyglet.graphics.Batch()
 
-image = pyglet.image.load('background.png')
+image = pyglet.image.load('images/background.png')
 background = pyglet.sprite.Sprite(image)
 background.scale = 0.5
 
-table = ClickableItem("table", "table.png", 680, 100, batch_main2, 0.5)
-sofa = ClickableItem("sofa", "sofa.png", 130, 113, batch_main2, 0.5)
-shelf1 = ClickableItem("shelf1", "shelf1.png", 340, 350, batch_main2, 0.5)
-shelf2 = ClickableItem("shelf2", "shelf2.png", 245, 450, batch_main2, 0.5)
-plant2 = ClickableItem("plant2", "plant2.png", 540, 100, batch_main2, 0.5)
+table = ClickableItem("table", "images/table.png", 680, 100, batch_main2, 0.5)
+sofa = ClickableItem("sofa", "images/sofa.png", 130, 113, batch_main2, 0.5)
+shelf1 = ClickableItem("shelf1", "images/shelf1.png", 340, 350, batch_main2, 0.5)
+shelf2 = ClickableItem("shelf2", "images/shelf2.png", 245, 450, batch_main2, 0.5)
+plant2 = ClickableItem("plant2", "images/plant2.png", 540, 100, batch_main2, 0.5)
 
 sprites_main2 = [table, sofa, shelf1, shelf2, plant2]
 
@@ -206,14 +206,14 @@ main_scene2 = Scene("main_scene2", background, sprites_main2, batch_main2)
 """Main scene3:"""
 batch_main3 = pyglet.graphics.Batch()
 
-image = pyglet.image.load('background.png')
+image = pyglet.image.load('images/background.png')
 background = pyglet.sprite.Sprite(image)
 background.scale = 0.5
 
-armchair = ClickableItem("armchair", "armchair.png", 70, 60, batch_main3, 0.5)
-door = ClickableItem("door", "door.png", 740, 120, batch_main3, 0.5)
-glass_window = ClickableItem("glass_window", "glass_window.png", 260, 300, batch_main3, 0.5)
-plant = ClickableItem("plant", "plant.png", 550, 120, batch_main3, 0.5)
+armchair = ClickableItem("armchair", "images/armchair.png", 70, 60, batch_main3, 0.5)
+door = ClickableItem("door", "images/door.png", 740, 120, batch_main3, 0.5)
+glass_window = ClickableItem("glass_window", "images/glass_window.png", 260, 300, batch_main3, 0.5)
+plant = ClickableItem("plant", "images/plant.png", 550, 120, batch_main3, 0.5)
 
 sprites_main3 = [armchair, door, glass_window, plant]
 main_scene3 = Scene("main_scene3", background, sprites_main3, batch_main3)
@@ -221,13 +221,13 @@ main_scene3 = Scene("main_scene3", background, sprites_main3, batch_main3)
 """Main scene4:"""
 batch_main4 = pyglet.graphics.Batch()
 
-image = pyglet.image.load('background.png')
+image = pyglet.image.load('images/background.png')
 background = pyglet.sprite.Sprite(image)
 background.scale = 0.5
 
-drawers = ClickableItem("drawers", "drawers.png", 700, 120, batch_main4, 0.4)
-bed_side = ClickableItem("bed_side", "bed_side.png", 70, 65, batch_main4, 0.6)
-glass_window2 = ClickableItem("glass_window2", "glass_window2.png", 230, 300, batch_main4, 0.5)
+drawers = ClickableItem("drawers", "images/drawers.png", 700, 120, batch_main4, 0.4)
+bed_side = ClickableItem("bed_side", "images/bed_side.png", 70, 65, batch_main4, 0.6)
+glass_window2 = ClickableItem("glass_window2", "images/glass_window2.png", 230, 300, batch_main4, 0.5)
 
 sprites_main4 = [drawers, bed_side, glass_window2]
 main_scene4 = Scene("main_scene4", background, sprites_main4, batch_main4)
@@ -236,11 +236,11 @@ main_scene4 = Scene("main_scene4", background, sprites_main4, batch_main4)
 batch_ceiling = pyglet.graphics.Batch()
 batch_ceiling_key = pyglet.graphics.Batch()
 
-image = pyglet.image.load('ceiling.png')
+image = pyglet.image.load('images/ceiling.png')
 background = pyglet.sprite.Sprite(image)
 background.scale = 0.5
 
-key_rotated2 = ClickableItem("key", "key_rotated2.png", 543, 288, batch_ceiling_key, 0.08)
+key_rotated2 = ClickableItem("key", "images/key_rotated2.png", 543, 288, batch_ceiling_key, 0.08)
 
 sprites_ceiling = [key_rotated2]
 ceiling_scene = Scene("ceiling_scene", background, sprites_ceiling, batch_ceiling, batch_ceiling_key)
@@ -249,11 +249,11 @@ ceiling_scene = Scene("ceiling_scene", background, sprites_ceiling, batch_ceilin
 by clicking on bedside table object):"""
 batch_bedside_table = pyglet.graphics.Batch()
 
-image = pyglet.image.load('close_bedside_table.png')
+image = pyglet.image.load('images/close_bedside_table.png')
 close_bedside_table = pyglet.sprite.Sprite(image)
 close_bedside_table.scale = 0.5
 
-bedside_table = ClickableItem("bedside_table_new", "bedside_table.png", 450, 30, batch_bedside_table, 1)
+bedside_table = ClickableItem("bedside_table_new", "images/bedside_table.png", 450, 30, batch_bedside_table, 1)
 
 sprites_bedside_table = [bedside_table]
 bedside_table_scene = Scene("bedside_table_scene", close_bedside_table, sprites_bedside_table, batch_bedside_table)
@@ -262,11 +262,11 @@ bedside_table_scene = Scene("bedside_table_scene", close_bedside_table, sprites_
 by clicking on bookcase object):"""
 batch_bookcase = pyglet.graphics.Batch()
 
-image = pyglet.image.load('close_bookcase.png')
+image = pyglet.image.load('images/close_bookcase.png')
 close_bookcase = pyglet.sprite.Sprite(image)
 close_bookcase.scale = 0.5
 
-bookcase = ClickableItem("bookcase_new", "bookcase.png", 300, 120, batch_bookcase, 1)
+bookcase = ClickableItem("bookcase_new", "images/bookcase.png", 300, 120, batch_bookcase, 1)
 
 sprites_bookcase = [bookcase]
 bookcase_scene = Scene("bookcase_scene", close_bookcase, sprites_bookcase, batch_bookcase)
@@ -274,11 +274,11 @@ bookcase_scene = Scene("bookcase_scene", close_bookcase, sprites_bookcase, batch
 """Bed scene (closer look to bed object, is accesible from main scene1
 by clicking on bed object):"""
 batch_bed = pyglet.graphics.Batch()
-image = pyglet.image.load('close_bed.png')
+image = pyglet.image.load('images/close_bed.png')
 close_bed = pyglet.sprite.Sprite(image)
 close_bed.scale = 0.5
 
-pillows = ClickableItem("pillows", "pillows.png", 480, 365, batch_bed, 1)
+pillows = ClickableItem("pillows", "images/pillows.png", 480, 365, batch_bed, 1)
 
 sprites_bed = [pillows]
 bed_scene = Scene("bed_scene", close_bed, sprites_bed, batch_bed)
@@ -286,7 +286,7 @@ bed_scene = Scene("bed_scene", close_bed, sprites_bed, batch_bed)
 """Painting scene (closer look to painting object, is accesible from main scene1
 by clicking on painting object):"""
 batch_painting = pyglet.graphics.Batch()
-image = pyglet.image.load('close_painting.png')
+image = pyglet.image.load('images/close_painting.png')
 close_painting = pyglet.sprite.Sprite(image)
 close_painting.scale = 0.5
 
@@ -296,11 +296,11 @@ painting_scene = Scene("painting_scene", close_painting, sprites_painting, batch
 """Armchair scene (closer look to armchair object, is accesible from main scene3
 by clicking on armchair object):"""
 batch_armchair = pyglet.graphics.Batch()
-image = pyglet.image.load('close_armchair.png')
+image = pyglet.image.load('images/close_armchair.png')
 close_armchair = pyglet.sprite.Sprite(image)
 close_armchair.scale = 0.5
 
-armchair = ClickableItem("armchair_new", "armchair.png", 170, 55, batch_armchair, 1)
+armchair = ClickableItem("armchair_new", "images/armchair.png", 170, 55, batch_armchair, 1)
 
 sprites_armchair = [armchair]
 armchair_scene = Scene("armchair_scene", close_armchair, sprites_armchair, batch_armchair)
@@ -308,11 +308,11 @@ armchair_scene = Scene("armchair_scene", close_armchair, sprites_armchair, batch
 """Plant scene (closer look to plant object, is accesible from main scene3
 by clicking on plant object):"""
 batch_plant = pyglet.graphics.Batch()
-image = pyglet.image.load('close_plant.png')
+image = pyglet.image.load('images/close_plant.png')
 close_plant = pyglet.sprite.Sprite(image)
 close_plant.scale = 0.5
 
-plant = ClickableItem("plant_new", "plant.png", 450, 40, batch_plant, 1)
+plant = ClickableItem("plant_new", "images/plant.png", 450, 40, batch_plant, 1)
 
 sprites_plant = [plant]
 plant_scene = Scene("plant_scene", close_plant, sprites_plant, batch_plant)
@@ -320,7 +320,7 @@ plant_scene = Scene("plant_scene", close_plant, sprites_plant, batch_plant)
 """Table scene (closer look to table object, is accesible from main scene2
 by clicking on table object):"""
 batch_table = pyglet.graphics.Batch()
-image = pyglet.image.load('close_table.png')
+image = pyglet.image.load('images/close_table.png')
 close_table = pyglet.sprite.Sprite(image)
 close_table.scale = 0.5
 
@@ -330,11 +330,11 @@ table_scene = Scene("table_scene", close_table, sprites_table, batch_table)
 """Drawers scene (closer look to drawers object, is accesible from main scene4
 by clicking on drawers object):"""
 batch_drawers = pyglet.graphics.Batch()
-image = pyglet.image.load('close_drawers.png')
+image = pyglet.image.load('images/close_drawers.png')
 close_drawers = pyglet.sprite.Sprite(image)
 close_drawers.scale = 0.5
 
-drawers = ClickableItem("drawers_new", "drawers.png", 460, 30, batch_drawers, 0.7)
+drawers = ClickableItem("drawers_new", "images/drawers.png", 460, 30, batch_drawers, 0.7)
 
 sprites_drawers = [drawers]
 drawers_scene = Scene("drawers_scene", close_drawers, sprites_drawers, batch_drawers)
@@ -342,11 +342,11 @@ drawers_scene = Scene("drawers_scene", close_drawers, sprites_drawers, batch_dra
 """Shelf scene (closer look to shelf object, is accesible from main scene2
 by clicking on shelf object):"""
 batch_shelf = pyglet.graphics.Batch()
-image = pyglet.image.load('close_shelf.png')
+image = pyglet.image.load('images/close_shelf.png')
 close_shelf = pyglet.sprite.Sprite(image)
 close_shelf.scale = 0.5
 
-shelf_book = ClickableItem("shelf_book", "shelf_book.png", 600, 344, batch_shelf, 0.5)
+shelf_book = ClickableItem("shelf_book", "images/shelf_book.png", 600, 344, batch_shelf, 0.5)
 
 sprites_shelf = [shelf_book]
 shelf_scene = Scene("shelf_scene", close_shelf, sprites_shelf, batch_shelf)
@@ -354,11 +354,11 @@ shelf_scene = Scene("shelf_scene", close_shelf, sprites_shelf, batch_shelf)
 """Cactus scene (closer look to cactus object, is accesible from main scene1
 by clicking on cactus object):"""
 batch_cactus = pyglet.graphics.Batch()
-image = pyglet.image.load('close_cactus.png')
+image = pyglet.image.load('images/close_cactus.png')
 close_cactus = pyglet.sprite.Sprite(image)
 close_cactus.scale = 0.5
 
-cactus = ClickableItem("cactus", "cactus.png", 320, 240, batch_cactus, 1)
+cactus = ClickableItem("cactus", "images/cactus.png", 320, 240, batch_cactus, 1)
 
 sprites_cactus = [cactus]
 cactus_scene = Scene("cactus_scene", close_cactus, sprites_cactus, batch_cactus)
@@ -366,11 +366,11 @@ cactus_scene = Scene("cactus_scene", close_cactus, sprites_cactus, batch_cactus)
 """Sofa scene (closer look to sofa object, is accesible from main scene2
 by clicking on sofa object):"""
 batch_sofa = pyglet.graphics.Batch()
-image = pyglet.image.load('close_sofa.png')
+image = pyglet.image.load('images/close_sofa.png')
 close_sofa = pyglet.sprite.Sprite(image)
 close_sofa.scale = 0.5
 
-sofa_pillow = ClickableItem("sofa_pillow", "sofa_pillow.png", 464, 240, batch_sofa, 1)
+sofa_pillow = ClickableItem("sofa_pillow", "images/sofa_pillow.png", 464, 240, batch_sofa, 1)
 
 sprites_sofa = [sofa_pillow]
 sofa_scene = Scene("sofa_scene", close_sofa, sprites_sofa, batch_sofa)
@@ -378,11 +378,11 @@ sofa_scene = Scene("sofa_scene", close_sofa, sprites_sofa, batch_sofa)
 """Open door scene (closer look to open door object, is accesible from main scene3
 by clicking on door object after finding all keys):"""
 batch_close_open_door = pyglet.graphics.Batch()
-image = pyglet.image.load('close_open_door.png')
+image = pyglet.image.load('images/close_open_door.png')
 close_open_door = pyglet.sprite.Sprite(image)
 close_open_door.scale = 0.5
 
-open_door = ClickableItem("open_door", "open_door.png", 484, 6, batch_close_open_door, 0.85)
+open_door = ClickableItem("open_door", "images/open_door.png", 484, 6, batch_close_open_door, 0.85)
 
 sprites_close_open_door = [open_door]
 close_open_door_scene = Scene("close_open_door_scene", close_open_door, sprites_close_open_door, batch_close_open_door)
@@ -393,12 +393,12 @@ by clicking on bedside table object):"""
 batch_open_bedside_table = pyglet.graphics.Batch()
 batch_open_bedside_table_key = pyglet.graphics.Batch()
 
-image = pyglet.image.load('close_bedside_table.png')
+image = pyglet.image.load('images/close_bedside_table.png')
 close_bedside_table = pyglet.sprite.Sprite(image)
 close_bedside_table.scale = 0.5
 
-open_bedside_table = ClickableItem("open_bedside_table", "open_bedside_table.png", 403, 31, batch_open_bedside_table, 1)
-key = ClickableItem("key", "key.png", 570, 140, batch_open_bedside_table_key, 0.1)
+open_bedside_table = ClickableItem("open_bedside_table", "images/open_bedside_table.png", 403, 31, batch_open_bedside_table, 1)
+key = ClickableItem("key", "images/key.png", 570, 140, batch_open_bedside_table_key, 0.1)
 
 sprites_open_bedside_table = [key, open_bedside_table]
 open_bedside_table_scene = Scene("open_bedside_table_scene", close_bedside_table, sprites_open_bedside_table, batch_open_bedside_table, batch_open_bedside_table_key)
@@ -408,12 +408,12 @@ by clicking on bookcase object):"""
 batch_open_bookcase = pyglet.graphics.Batch()
 batch_open_bookcase_key = pyglet.graphics.Batch()
 
-image = pyglet.image.load('close_bookcase.png')
+image = pyglet.image.load('images/close_bookcase.png')
 close_bookcase = pyglet.sprite.Sprite(image)
 close_bookcase.scale = 0.5
 
-open_bookcase = ClickableItem("open_bookcase", "open_bookcase.png", 294, 120, batch_open_bookcase, 1)
-key = ClickableItem("key", "key.png", 580, 250, batch_open_bookcase_key, 0.1)
+open_bookcase = ClickableItem("open_bookcase", "images/open_bookcase.png", 294, 120, batch_open_bookcase, 1)
+key = ClickableItem("key", "images/key.png", 580, 250, batch_open_bookcase_key, 0.1)
 
 sprites_open_bookcase = [key, open_bookcase]
 open_bookcase_scene = Scene("open_bookcase_scene", close_bookcase, sprites_open_bookcase, batch_open_bookcase, batch_open_bookcase_key)
@@ -423,12 +423,12 @@ by clicking on pillows object):"""
 batch_pillows_up_bed = pyglet.graphics.Batch()
 batch_pillows_up_bed_key = pyglet.graphics.Batch()
 
-image = pyglet.image.load('close_bed.png')
+image = pyglet.image.load('images/close_bed.png')
 close_bed = pyglet.sprite.Sprite(image)
 close_bed.scale = 0.5
 
-pillows = ClickableItem("pillows", "pillows.png", 480, 400, batch_pillows_up_bed, 1)
-key = ClickableItem("key", "key.png", 755, 380, batch_pillows_up_bed_key, 0.1)
+pillows = ClickableItem("pillows", "images/pillows.png", 480, 400, batch_pillows_up_bed, 1)
+key = ClickableItem("key", "images/key.png", 755, 380, batch_pillows_up_bed_key, 0.1)
 
 sprites_pillows_up_bed = [key, pillows]
 bed_pillows_up_scene = Scene("bed_pillows_up_scene", close_bed, sprites_pillows_up_bed, batch_pillows_up_bed, batch_pillows_up_bed_key)
@@ -438,12 +438,12 @@ by clicking on shelf book object):"""
 batch_shelf_book_moved = pyglet.graphics.Batch()
 batch_shelf_book_moved_key = pyglet.graphics.Batch()
 
-image = pyglet.image.load('close_shelf.png')
+image = pyglet.image.load('images/close_shelf.png')
 close_shelf = pyglet.sprite.Sprite(image)
 close_shelf.scale = 0.5
 
-shelf_book = ClickableItem("shelf_book", "shelf_book.png", 525, 343, batch_shelf_book_moved, 0.5)
-key = ClickableItem("key", "key.png", 675, 345, batch_shelf_book_moved_key, 0.09)
+shelf_book = ClickableItem("shelf_book", "images/shelf_book.png", 525, 343, batch_shelf_book_moved, 0.5)
+key = ClickableItem("key", "images/key.png", 675, 345, batch_shelf_book_moved_key, 0.09)
 
 sprites_shelf_book_moved = [shelf_book, key]
 shelf_book_moved_scene = Scene("shelf_book_moved_scene", close_shelf, sprites_shelf_book_moved, batch_shelf_book_moved, batch_shelf_book_moved_key)
@@ -453,12 +453,12 @@ by clicking on armchair object):"""
 batch_armchair_moved = pyglet.graphics.Batch()
 batch_armchair_moved_key = pyglet.graphics.Batch()
 
-image = pyglet.image.load('close_armchair.png')
+image = pyglet.image.load('images/close_armchair.png')
 close_armchair = pyglet.sprite.Sprite(image)
 close_armchair.scale = 0.5
 
-armchair = ClickableItem("armchair", "armchair.png", 280, 55, batch_armchair_moved, 1)
-key = ClickableItem("key", "key.png", 230, 160, batch_armchair_moved_key, 0.1)
+armchair = ClickableItem("armchair", "images/armchair.png", 280, 55, batch_armchair_moved, 1)
+key = ClickableItem("key", "images/key.png", 230, 160, batch_armchair_moved_key, 0.1)
 
 sprites_armchair_moved = [key, armchair]
 armchair_moved_scene = Scene("armchair_moved_scene", close_armchair, sprites_armchair_moved, batch_armchair_moved, batch_armchair_moved_key)
@@ -468,12 +468,12 @@ by clicking on cactus object):"""
 batch_cactus_moved = pyglet.graphics.Batch()
 batch_cactus_moved_key = pyglet.graphics.Batch()
 
-image = pyglet.image.load('close_cactus.png')
+image = pyglet.image.load('images/close_cactus.png')
 close_cactus = pyglet.sprite.Sprite(image)
 close_cactus.scale = 0.5
 
-key_rotated = ClickableItem("key", "key_rotated.png", 372, 332, batch_cactus_moved_key, 0.1)
-cactus_half = ClickableItem("cactus_half", "cactus_half.png", 320, 241, batch_cactus_moved, 1)
+key_rotated = ClickableItem("key", "images/key_rotated.png", 372, 332, batch_cactus_moved_key, 0.1)
+cactus_half = ClickableItem("cactus_half", "images/cactus_half.png", 320, 241, batch_cactus_moved, 1)
 
 sprites_cactus_moved = [key_rotated, cactus_half]
 cactus_moved_scene = Scene("cactus_moved_scene", close_cactus, sprites_cactus_moved, batch_cactus_moved, batch_cactus_moved_key)
@@ -483,12 +483,12 @@ by clicking on drawers object):"""
 batch_open_drawers = pyglet.graphics.Batch()
 batch_open_drawers_key = pyglet.graphics.Batch()
 
-image = pyglet.image.load('close_drawers.png')
+image = pyglet.image.load('images/close_drawers.png')
 close_drawers = pyglet.sprite.Sprite(image)
 close_drawers.scale = 0.5
 
-open_drawers = ClickableItem("open_drawers", "open_drawers.png", 460, 30, batch_open_drawers, 0.7)
-key = ClickableItem("key", "key.png", 623, 140, batch_open_drawers_key, 0.1)
+open_drawers = ClickableItem("open_drawers", "images/open_drawers.png", 460, 30, batch_open_drawers, 0.7)
+key = ClickableItem("key", "images/key.png", 623, 140, batch_open_drawers_key, 0.1)
 
 sprites_open_drawers = [key, open_drawers]
 open_drawers_scene = Scene("open_drawers_scene", close_drawers, sprites_open_drawers, batch_open_drawers, batch_open_drawers_key)
@@ -498,12 +498,12 @@ by clicking on sofa pillow object):"""
 batch_sofa_pillow_up = pyglet.graphics.Batch()
 batch_sofa_pillow_up_key = pyglet.graphics.Batch()
 
-image = pyglet.image.load('close_sofa.png')
+image = pyglet.image.load('images/close_sofa.png')
 close_sofa = pyglet.sprite.Sprite(image)
 close_sofa.scale = 0.5
 
-sofa_pillow = ClickableItem("sofa_pillow", "sofa_pillow.png", 464, 300, batch_sofa_pillow_up, 1)
-key = ClickableItem("key", "key.png", 550, 250, batch_sofa_pillow_up_key, 0.1)
+sofa_pillow = ClickableItem("sofa_pillow", "images/sofa_pillow.png", 464, 300, batch_sofa_pillow_up, 1)
+key = ClickableItem("key", "images/key.png", 550, 250, batch_sofa_pillow_up_key, 0.1)
 
 sprites_sofa_pillow_up = [key, sofa_pillow]
 sofa_pillow_up_scene = Scene("sofa_pillow_up_scene", close_sofa, sprites_sofa_pillow_up, batch_sofa_pillow_up, batch_sofa_pillow_up_key)
@@ -513,12 +513,12 @@ by clicking on plant object):"""
 batch_plant_moved = pyglet.graphics.Batch()
 batch_plant_moved_key = pyglet.graphics.Batch()
 
-image = pyglet.image.load('close_plant.png')
+image = pyglet.image.load('images/close_plant.png')
 close_plant = pyglet.sprite.Sprite(image)
 close_plant.scale = 0.5
 
-plant_moved = ClickableItem("plant_moved", "plant_moved.png", 443, 40, batch_plant_moved, 1)
-key = ClickableItem("key", "key.png", 500, 280, batch_plant_moved_key, 0.1)
+plant_moved = ClickableItem("plant_moved", "images/plant_moved.png", 443, 40, batch_plant_moved, 1)
+key = ClickableItem("key", "images/key.png", 500, 280, batch_plant_moved_key, 0.1)
 
 sprites_plant_moved = [key, plant_moved]
 plant_moved_scene = Scene("plant_moved_scene", close_plant, sprites_plant_moved, batch_plant_moved_key, batch_plant_moved)
